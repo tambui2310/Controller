@@ -72,17 +72,18 @@ class CustomerController extends Controller
     public function update(Request $request,Store $session, $id )
     {   
         $customers =$session->get('customers');
+        $id = $request->id;
         $hoTen = $request->hoTen;
         $sdt = $request->sdt;
         $email = $request->email;
         $customers[$id] = [
-            'id' => $id,
-            'hoTen' =>$hoTen,
+            'id' => $id+1,
+            'name' =>$hoTen,
             'sdt' => $sdt,
-            '$email' => $email
+            'email' => $email
         ];
         $session->put('customers',$customers);
-        return view('modules.customer.index', compact('customer'));
+        return view('modules.customer.index', compact('customers'));
     }
 
     public function edit(Request $request, $id,Store $session)
@@ -92,12 +93,11 @@ class CustomerController extends Controller
         return view('modules.customer.edit', compact('customer'));
     }
 
-    public function delete($id)
+    public function delete(Store $session, $id)
     {
-        // $customers =$session ->get('customers');
-        // unset($customers)[$id-1];
-        // session(['customers' => $customers]);
-        // return redirect()->Rout('index');
-
+        $customers =$session->get('customers');
+        unset($customers[$id-1]);
+        $session ->put('customers',$customers);
+        return view('modules.customer.index', compact('customers'));
     }
 }

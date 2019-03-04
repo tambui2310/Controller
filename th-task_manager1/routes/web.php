@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 // Tạo 1 nhóm route với tiền tố customer
-Route::prefix('customer')->group(function () {
+Route::prefix('customer')->group(function() {
 
     Route::get('index', 'CustomerController@index');
 
@@ -25,9 +25,9 @@ Route::prefix('customer')->group(function () {
 
     Route::get('show/{id}', 'CustomerController@show');
 
-    Route::post('edit', 'CustomerController@update');
+    Route::post('edit/{id}', 'CustomerController@update');
 
     Route::get('edit/{id}', 'CustomerController@edit');
 
-    Route::delete('{id}', 'CustomerController@delete');
+    Route::get('index/{id}', 'CustomerController@delete');
 });

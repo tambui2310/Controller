@@ -30,6 +30,7 @@
 			</tr>
 		</table>
 	</form>
+	<a href="http://localhost:8080/php/Laravel/Controller/th-task_manager1/public/customer/index">Quay lại</a>
 
 </body>
 </html>

@@ -16,16 +16,16 @@
 			</tr>
 			<tr>
 				<td>
-					  <input type="text" name="id" value="<?php echo $customer['id']; ?>">
+					  <input type="text" name="id" value="{{$customer['id']}}">
 				</td>
 				<td>
-					  <input type="text" name="hoTen" value="<?php echo $customer['name']; ?>">
+					  <input type="text" name="hoTen" value="{{$customer['name']}}">
 				</td>
 				<td>
-					<input type="text" name="sdt" value="<?php echo $customer['sdt']; ?>">
+					<input type="text" name="sdt" value="{{$customer['sdt']}}">
 				</td>
 				<td>
-					<input type="text" name="email" value="<?php echo $customer['email']; ?>">
+					<input type="text" name="email" value="{{$customer['email']}}">
 				</td>
 			</tr>
 		</table>
